@@ -1,0 +1,12 @@
+/* הוספת אנימציה לעבור בין חלונות בצורה חלקה */
+.window {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* אנימציה של שינוי שקיפות ושינוי גודל */
+  }
+  
+  .window.show {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
