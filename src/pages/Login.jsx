@@ -37,12 +37,18 @@ function Login({ onLogin }) {
 
         if (data.success) {
             setLabelColor("success");
-            onLogin(); // Update authentication state in App.jsx
+            onLogin(formData.username); // Pass username to the handleLogin function
             setTimeout(() => {
-                navigate(`/home`);
+                navigate(`/map`); // Redirect to /map instead of /home
             }, 1500);
         }
     }
+
+    const handleKeyDown = (event) => {
+        if (event.key === "Enter") {
+            handleLogin(event); // Trigger login when Enter is pressed
+        }
+    };
 
     return (
         <Box
@@ -79,6 +85,7 @@ function Login({ onLogin }) {
                         </Typography>
                         <Stack spacing={3}>
                             <TextField
+                                id="username"
                                 label="User Name"
                                 variant="outlined"
                                 required
@@ -98,8 +105,10 @@ function Login({ onLogin }) {
                                         username: event.target.value,
                                     })
                                 }
+                                onKeyDown={handleKeyDown} // Add event listener for Enter key
                             />
                             <TextField
+                                id="password"
                                 label="Password"
                                 variant="outlined"
                                 type="password"
@@ -120,11 +129,13 @@ function Login({ onLogin }) {
                                         password: event.target.value,
                                     })
                                 }
+                                onKeyDown={handleKeyDown} // Add event listener for Enter key
                             />
                             <Typography color={labelColor} textAlign="center">
                                 {message}
                             </Typography>
                             <Button
+                                id="login-button"
                                 onClick={handleLogin}
                                 variant="contained"
                                 color="primary"

@@ -7,16 +7,17 @@ import {
     Navigate,
 } from "react-router-dom";
 import DashboardLayoutBranding from "./components/DashboardSidebarAccountFooter.jsx";
-import Home from "./pages/Home";
 import Map from "./pages/map";
 import Chat from "./pages/chat";
+import EditProfile from "./pages/EditProfile";
+import Logout from "./pages/Logout"; // Import the Logout component
 import "./App.css";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
-function DashboardLayout() {
+function DashboardLayout({ onLogout }) {
     return (
-        <DashboardLayoutBranding>
+        <DashboardLayoutBranding onLogout={onLogout}>
             <Outlet />
         </DashboardLayoutBranding>
     );
@@ -26,15 +27,23 @@ function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(
         JSON.parse(localStorage.getItem("isAuthenticated")) || false
     );
+    
+    const [currentUser, setCurrentUser] = useState(
+        localStorage.getItem("currentUsername") || ""
+    );
 
-    const handleLogin = () => {
+    const handleLogin = (username) => {
         setIsAuthenticated(true);
+        setCurrentUser(username);
         localStorage.setItem("isAuthenticated", true);
+        localStorage.setItem("currentUsername", username);
     };
 
     const handleLogout = () => {
         setIsAuthenticated(false);
+        setCurrentUser("");
         localStorage.removeItem("isAuthenticated");
+        localStorage.removeItem("currentUsername");
     };
 
     return (
@@ -44,7 +53,7 @@ function App() {
                     path="/"
                     element={
                         isAuthenticated ? (
-                            <Navigate to="/home" />
+                            <Navigate to="/map" />
                         ) : (
                             <Navigate to="/login" />
                         )
@@ -60,15 +69,16 @@ function App() {
                     path="/"
                     element={
                         isAuthenticated ? (
-                            <DashboardLayout />
+                            <DashboardLayout onLogout={handleLogout} />
                         ) : (
                             <Navigate to="/login" />
                         )
                     }
                 >
-                    <Route path="home" element={<Home />} />
                     <Route path="map" element={<Map />} />
                     <Route path="chat" element={<Chat />} />
+                    <Route path="profile/edit" element={<EditProfile username={currentUser} />} />
+                    <Route path="logout" element={<Logout />} /> {/* Add the Logout route */}
                 </Route>
             </Routes>
         </Router>

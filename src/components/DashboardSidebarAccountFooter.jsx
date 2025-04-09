@@ -32,25 +32,25 @@ const NAVIGATION = [
         title: "Main items",
     },
     {
-        segment: "home",
-        title: "Home",
-    },
-    {
         segment: "map",
-        title: "Map",
+        title: "My CV",
     },
     {
         segment: "chat",
         title: "Chat",
     },
     {
-        segment: "login",
+        segment: "profile/edit",
+        title: "Edit Profile",
+    },
+    {
+        segment: "logout", // Change this from "login" to "logout"
         title: "Logout",
     }
 ];
 
 function DashboardLayoutBranding(props) {
-    const { window } = props;
+    const { window, children } = props;
     const demoWindow = window !== undefined ? window() : undefined;
     
     return (
@@ -59,18 +59,13 @@ function DashboardLayoutBranding(props) {
             branding={{
                 logo: <img src="../src/assets/11.jpeg" alt="israel" />,
                 title: "israel",
-                homeUrl: "/toolpad/core/introduction",
+                homeUrl: "/profile/edit",
             }}
             theme={demoTheme}
             window={demoWindow}
         >
             <DashboardLayout>
-                <Routes>
-                    <Route path="/home" element={<HomePage />} />
-                    <Route path="/map" element={<MapPage />} />
-                    <Route path="/chat" element={<ChatPage />} />
-                    <Route path="/login" element={<Login />} />
-                </Routes>
+                {children}
             </DashboardLayout>
         </AppProvider>
     );
@@ -78,6 +73,7 @@ function DashboardLayoutBranding(props) {
 
 DashboardLayoutBranding.propTypes = {
     window: PropTypes.func,
+    children: PropTypes.node
 };
 
 export default DashboardLayoutBranding;

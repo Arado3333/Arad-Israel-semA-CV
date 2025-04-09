@@ -1,9 +1,9 @@
 [
   {
     "id": 1,
-    "fName": "Bar",
-    "lName": "david",
-    "email": "bar@gmail.com",
+    "fName": "updated",
+    "lName": "user",
+    "email": "updated@example.com",
     "username": "bar1234",
     "password": "12345678"
   }
