@@ -1,0 +1,1226 @@
+{
+  "id": "9b08ee59-74dd-4979-a561-c8a9ef14d1d3",
+  "version": "2.0",
+  "name": "Auth Profile Tests",
+  "url": "http://localhost:5173",
+  "tests": [{
+    "id": "1.1-successful-login",
+    "name": "1.1 Successful Login",
+    "commands": [{
+      "id": "5e0203b8-23e2-4965-b13f-6a1692604fdf",
+      "comment": "",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b2606a56-0185-4983-b519-4563c5a85fa6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1100x735",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1b981736-eb3d-4c87-8648-cef36d15df10",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9429a127-0655-4b39-8432-bf86fe538d83",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "bar1234"
+    }, {
+      "id": "f7603ef1-179e-4f91-9688-72f4a7d13b73",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "24bfd6f7-4264-4648-bdd2-dbe09e5031e9",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "id=login-button",
+      "targets": [
+        ["id=login-button", "id"],
+        ["css=#login-button", "css:finder"],
+        ["xpath=//button[@id='login-button']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ab61f911-ec83-4f11-97ea-9bdace0f203b",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "12345678"
+    }, {
+      "id": "67be970a-41a4-4358-bc9a-880346ed121d",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-button",
+      "targets": [
+        ["id=login-button", "id"],
+        ["css=#login-button", "css:finder"],
+        ["xpath=//button[@id='login-button']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c54c2588-e564-4266-af32-42c9522b7606",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.MuiTypography-body1",
+      "targets": [],
+      "value": "Authentication successful, Logging in"
+    }]
+  }, {
+    "id": "1.2-invalid-username",
+    "name": "1.2 Invalid Username",
+    "commands": [{
+      "id": "97cb2489-0430-427b-be2a-de9945746785",
+      "comment": "",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ba54d8a8-a822-4d3d-ade9-cfc45b397f90",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1100x735",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9fb3fea0-5952-476b-81bf-83091f4c915c",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fda92881-0ebf-4c71-afa7-d73209a01c1b",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "nonexistent_user"
+    }, {
+      "id": "f155e3f6-c529-4cd7-bc40-3dafbebec452",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cadb707a-b262-408f-90e9-bab4118abdef",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "mashu1234567"
+    }, {
+      "id": "5b6d17fb-6088-4eec-961c-2920086c61fa",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-button",
+      "targets": [
+        ["id=login-button", "id"],
+        ["css=#login-button", "css:finder"],
+        ["xpath=//button[@id='login-button']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3aa1a5fd-6f94-4dc0-acd3-2bbe108a1189",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.MuiTypography-body1",
+      "targets": [],
+      "value": "Incorrect credentials or unregistered"
+    }]
+  }, {
+    "id": "1.3-invalid-password",
+    "name": "1.3 Invalid Password",
+    "commands": [{
+      "id": "go-to-login",
+      "comment": "Navigate to login page",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "enter-valid-username",
+      "comment": "Enter valid username",
+      "command": "type",
+      "target": "id=username",
+      "targets": [],
+      "value": "bar1234"
+    }, {
+      "id": "enter-wrong-password",
+      "comment": "Enter wrong password",
+      "command": "type",
+      "target": "id=password",
+      "targets": [],
+      "value": "wrongpassword"
+    }, {
+      "id": "click-login",
+      "comment": "Click the login button",
+      "command": "click",
+      "target": "id=login-button",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "wait-for-error",
+      "comment": "Wait for error message",
+      "command": "waitForText",
+      "target": "css=.MuiTypography-body1",
+      "targets": [],
+      "value": "Incorrect credentials or unregistered"
+    }, {
+      "id": "verify-still-on-login",
+      "comment": "Verify still on login page",
+      "command": "assertElementPresent",
+      "target": "css=.MuiTypography-h4",
+      "targets": [],
+      "value": "Welcome Back!"
+    }]
+  }, {
+    "id": "1.4-empty-fields-validation",
+    "name": "1.4 Empty Fields Validation",
+    "commands": [{
+      "id": "go-to-login",
+      "comment": "Navigate to login page",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "clear-username",
+      "comment": "Clear username field",
+      "command": "click",
+      "target": "id=username",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "clear-password",
+      "comment": "Clear password field",
+      "command": "click",
+      "target": "id=password",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "click-login",
+      "comment": "Click the login button",
+      "command": "click",
+      "target": "id=login-button",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "verify-validation",
+      "comment": "Verify validation message appears",
+      "command": "assertElementPresent",
+      "target": "css=input:invalid",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "verify-still-on-login",
+      "comment": "Verify still on login page",
+      "command": "assertElementPresent",
+      "target": "css=.MuiTypography-h4",
+      "targets": [],
+      "value": "Welcome Back!"
+    }]
+  }, {
+    "id": "1.5-login-with-enter-key",
+    "name": "1.5 Login with Enter Key",
+    "commands": [{
+      "id": "go-to-login",
+      "comment": "Navigate to login page",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "enter-username",
+      "comment": "Enter valid username",
+      "command": "type",
+      "target": "id=username",
+      "targets": [],
+      "value": "bar1234"
+    }, {
+      "id": "enter-password-with-enter",
+      "comment": "Enter valid password and press Enter",
+      "command": "sendKeys",
+      "target": "id=password",
+      "targets": [],
+      "value": "12345678${KEY_ENTER}"
+    }, {
+      "id": "wait-for-success",
+      "comment": "Wait for success message",
+      "command": "waitForText",
+      "target": "css=.MuiTypography-body1",
+      "targets": [],
+      "value": "Authentication successful, Logging in"
+    }, {
+      "id": "wait-for-redirect",
+      "comment": "Wait for redirect to map page",
+      "command": "waitForElementPresent",
+      "target": "css=.MuiTypography-h4",
+      "targets": [],
+      "value": "PROFESSIONAL SUMMARY"
+    }]
+  }, {
+    "id": "2.1-successful-registration",
+    "name": "2.1 Successful Registration",
+    "commands": [{
+      "id": "go-to-register",
+      "comment": "Navigate to registration page",
+      "command": "open",
+      "target": "/register",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "verify-register-page",
+      "comment": "Verify we're on the registration page",
+      "command": "assertText",
+      "target": "css=h4",
+      "targets": [],
+      "value": "Create an Account"
+    }, {
+      "id": "enter-first-name",
+      "comment": "Enter first name",
+      "command": "type",
+      "target": "id=tf-fName",
+      "targets": [],
+      "value": "Test"
+    }, {
+      "id": "enter-last-name",
+      "comment": "Enter last name",
+      "command": "type",
+      "target": "id=tf-lName",
+      "targets": [],
+      "value": "User"
+    }, {
+      "id": "enter-email",
+      "comment": "Enter email",
+      "command": "type",
+      "target": "id=tf-email",
+      "targets": [],
+      "value": "testuser@example.com"
+    }, {
+      "id": "enter-username",
+      "comment": "Enter username",
+      "command": "type",
+      "target": "id=tf-username",
+      "targets": [],
+      "value": "testuser123"
+    }, {
+      "id": "enter-password",
+      "comment": "Enter password",
+      "command": "type",
+      "target": "id=tf-password",
+      "targets": [],
+      "value": "password123"
+    }, {
+      "id": "4b1241b7-a6fe-479e-b10d-69eb0c56c143",
+      "comment": "",
+      "command": "click",
+      "target": "id=:rb:",
+      "targets": [
+        ["id=:rb:", "id"],
+        ["css=#\\3Arb\\3A", "css:finder"],
+        ["xpath=//button[@id=':rb:']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "98047f8e-2d8e-48b5-9ec2-dad15dc934ca",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiTypography-body1",
+      "targets": [
+        ["css=.MuiTypography-body1", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div/div/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'User created successfully')]", "xpath:innerText"]
+      ],
+      "value": "User created successfully"
+    }]
+  }, {
+    "id": "2.2-registration-with-existing-username",
+    "name": "2.2 Registration with Existing Username",
+    "commands": [{
+      "id": "go-to-register",
+      "comment": "Navigate to registration page",
+      "command": "open",
+      "target": "/register",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "enter-first-name",
+      "comment": "Enter first name",
+      "command": "type",
+      "target": "id=tf-fName",
+      "targets": [],
+      "value": "Another"
+    }, {
+      "id": "enter-last-name",
+      "comment": "Enter last name",
+      "command": "type",
+      "target": "id=tf-lName",
+      "targets": [],
+      "value": "User"
+    }, {
+      "id": "enter-email",
+      "comment": "Enter email",
+      "command": "type",
+      "target": "id=tf-email",
+      "targets": [],
+      "value": "another@example.com"
+    }, {
+      "id": "enter-existing-username",
+      "comment": "Enter existing username",
+      "command": "type",
+      "target": "id=tf-username",
+      "targets": [],
+      "value": "bar1234"
+    }, {
+      "id": "enter-password",
+      "comment": "Enter password",
+      "command": "type",
+      "target": "id=tf-password",
+      "targets": [],
+      "value": "newpassword123"
+    }, {
+      "id": "click-register",
+      "comment": "Click register button",
+      "command": "click",
+      "target": "id=:rb:",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "wait-for-error",
+      "comment": "Wait for error message",
+      "command": "waitForText",
+      "target": "css=.MuiTypography-body1",
+      "targets": [],
+      "value": "User already exists"
+    }, {
+      "id": "verify-still-on-register",
+      "comment": "Verify still on register page",
+      "command": "assertElementPresent",
+      "target": "css=.MuiTypography-h4",
+      "targets": [],
+      "value": "Create an Account"
+    }]
+  }, {
+    "id": "2.4-registration-with-invalid-email",
+    "name": "2.4 Registration with Invalid Email",
+    "commands": [{
+      "id": "go-to-register",
+      "comment": "Navigate to registration page",
+      "command": "open",
+      "target": "/register",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "enter-first-name",
+      "comment": "Enter first name",
+      "command": "type",
+      "target": "id=tf-fName",
+      "targets": [],
+      "value": "Test"
+    }, {
+      "id": "enter-last-name",
+      "comment": "Enter last name",
+      "command": "type",
+      "target": "id=tf-lName",
+      "targets": [],
+      "value": "User"
+    }, {
+      "id": "enter-invalid-email",
+      "comment": "Enter invalid email",
+      "command": "type",
+      "target": "id=tf-email",
+      "targets": [],
+      "value": "invalid-email"
+    }, {
+      "id": "enter-username",
+      "comment": "Enter username",
+      "command": "type",
+      "target": "id=tf-username",
+      "targets": [],
+      "value": "testuser456"
+    }, {
+      "id": "enter-password",
+      "comment": "Enter password",
+      "command": "type",
+      "target": "id=tf-password",
+      "targets": [],
+      "value": "password123"
+    }, {
+      "id": "click-register",
+      "comment": "Click register button",
+      "command": "click",
+      "target": "id=:rb:",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "wait-for-error",
+      "comment": "Wait for error message",
+      "command": "waitForText",
+      "target": "css=.MuiTypography-body1",
+      "targets": [],
+      "value": "Invalid email format."
+    }, {
+      "id": "verify-still-on-register",
+      "comment": "Verify still on register page",
+      "command": "assertElementPresent",
+      "target": "css=.MuiTypography-body1",
+      "targets": [],
+      "value": "Create an Account"
+    }]
+  }, {
+    "id": "2.5-registration-with-short-password",
+    "name": "2.5 Registration with Short Password",
+    "commands": [{
+      "id": "go-to-register",
+      "comment": "Navigate to registration page",
+      "command": "open",
+      "target": "/register",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "enter-first-name",
+      "comment": "Enter first name",
+      "command": "type",
+      "target": "id=tf-fName",
+      "targets": [],
+      "value": "Test"
+    }, {
+      "id": "enter-last-name",
+      "comment": "Enter last name",
+      "command": "type",
+      "target": "id=tf-lName",
+      "targets": [],
+      "value": "User"
+    }, {
+      "id": "enter-email",
+      "comment": "Enter email",
+      "command": "type",
+      "target": "id=tf-email",
+      "targets": [],
+      "value": "testuser@example.com"
+    }, {
+      "id": "enter-username",
+      "comment": "Enter username",
+      "command": "type",
+      "target": "id=tf-username",
+      "targets": [],
+      "value": "testuser789"
+    }, {
+      "id": "enter-short-password",
+      "comment": "Enter short password",
+      "command": "type",
+      "target": "id=tf-password",
+      "targets": [],
+      "value": "123"
+    }, {
+      "id": "click-register",
+      "comment": "Click register button",
+      "command": "click",
+      "target": "id=:rb:",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "wait-for-error",
+      "comment": "Wait for error message",
+      "command": "waitForText",
+      "target": "css=.MuiTypography-body1",
+      "targets": [],
+      "value": "Password must be at least 8 characters long."
+    }, {
+      "id": "verify-still-on-register",
+      "comment": "Verify still on register page",
+      "command": "assertElementPresent",
+      "target": "css=.MuiTypography-h4",
+      "targets": [],
+      "value": "Create an Account"
+    }]
+  }, {
+    "id": "3.1-successful-profile-update",
+    "name": "3.1 Successful Profile Update",
+    "commands": [{
+      "id": "e0affd0c-2883-4dea-b1a3-1020ade2816e",
+      "comment": "",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "13a6627d-687b-4a5b-8178-1ad13278e2a3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1192x735",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d2108721-6ab7-44ea-9212-2cb6c54710a8",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f6113a8-d349-435f-ba96-07f970ef2fff",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "bar1234"
+    }, {
+      "id": "50433b92-20ea-4257-a835-ea57c1a2fe85",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9f0d2a54-41a9-4fb8-95f4-e593269d803f",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "id=login-button",
+      "targets": [
+        ["id=login-button", "id"],
+        ["css=#login-button", "css:finder"],
+        ["xpath=//button[@id='login-button']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "52a4cef7-8f89-4597-b98a-fdde3f8cde0a",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "12345678"
+    }, {
+      "id": "9c6f7bee-276e-4eba-8df5-ba6186ddc6c9",
+      "comment": "",
+      "command": "click",
+      "target": "id=login-button",
+      "targets": [
+        ["id=login-button", "id"],
+        ["css=#login-button", "css:finder"],
+        ["xpath=//button[@id='login-button']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9527c4f2-a74b-4f93-ba95-4ca99ecc6709",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "id=login-button",
+      "targets": [
+        ["id=login-button", "id"],
+        ["css=#login-button", "css:finder"],
+        ["xpath=//button[@id='login-button']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "952eb3e1-f29d-4fe1-bb01-9c865687f124",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=Edit Profile",
+      "targets": [
+        ["linkText=Edit Profile", "linkText"],
+        ["css=.MuiDrawer-root:nth-child(3) .MuiListItem-root:nth-child(4) > .MuiButtonBase-root", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div/nav/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/profile/edit')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/nav/ul/li[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b4dbfa58-1e98-4752-8ecd-5d96aebb5266",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "linkText=Edit Profile",
+      "targets": [
+        ["linkText=Edit Profile", "linkText"],
+        ["css=.MuiDrawer-root:nth-child(3) .MuiListItem-root:nth-child(4) > .MuiButtonBase-root", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div/nav/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/profile/edit')])[2]", "xpath:href"],
+        ["xpath=//div[2]/div/nav/ul/li[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0a01e118-1b4a-4749-84c6-791b93ec403e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.MuiPaper-root:nth-child(1) .MuiListItem-root:nth-child(4) .MuiListItemText-root:nth-child(1) > .MuiTypography-root",
+      "targets": [
+        ["css=.MuiPaper-root:nth-child(1) .MuiListItem-root:nth-child(4) .MuiListItemText-root:nth-child(1) > .MuiTypography-root", "css:finder"],
+        ["xpath=//div[@id='root']/div/div[2]/div/nav/ul/li[3]/a/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/nav/ul/li[3]/a/div/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a645ffc3-3e03-4b11-b041-9fdf71fb215c",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "id=:rv:",
+      "targets": [
+        ["id=:rv:", "id"],
+        ["css=#\\3Arv\\3A", "css:finder"],
+        ["xpath=//button[@id=':rv:']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[3]/main/div/div/div/div/form/div/button", "xpath:idRelative"],
+        ["xpath=//form/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8c486754-f44b-47de-8abf-3754575abb2e",
+      "comment": "",
+      "command": "click",
+      "target": "id=:rp:",
+      "targets": [
+        ["id=:rp:", "id"],
+        ["name=fName", "name"],
+        ["css=#\\3Arp\\3A", "css:finder"],
+        ["xpath=//input[@id=':rp:']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[3]/main/div/div/div/div/form/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "71f109cd-de90-4a1c-9a26-0d818d6336d7",
+      "comment": "",
+      "command": "click",
+      "target": "id=:rp:",
+      "targets": [
+        ["id=:rp:", "id"],
+        ["name=fName", "name"],
+        ["css=#\\3Arp\\3A", "css:finder"],
+        ["xpath=//input[@id=':rp:']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[3]/main/div/div/div/div/form/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "65fc43b1-82f5-469a-bd9c-37f91a1a9e07",
+      "comment": "",
+      "command": "click",
+      "target": "id=:rp:",
+      "targets": [
+        ["id=:rp:", "id"],
+        ["name=fName", "name"],
+        ["css=#\\3Arp\\3A", "css:finder"],
+        ["xpath=//input[@id=':rp:']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[3]/main/div/div/div/div/form/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e22d2431-8299-4b52-be83-873029a1a76e",
+      "comment": "",
+      "command": "type",
+      "target": "id=:rp:",
+      "targets": [
+        ["id=:rp:", "id"],
+        ["name=fName", "name"],
+        ["css=#\\3Arp\\3A", "css:finder"],
+        ["xpath=//input[@id=':rp:']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[3]/main/div/div/div/div/form/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "updated"
+    }, {
+      "id": "69b45d00-5ecd-4ccd-9713-33e7f31f4a86",
+      "comment": "",
+      "command": "click",
+      "target": "id=:rr:",
+      "targets": [
+        ["id=:rr:", "id"],
+        ["name=lName", "name"],
+        ["css=#\\3Arr\\3A", "css:finder"],
+        ["xpath=//input[@id=':rr:']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[3]/main/div/div/div/div/form/div/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2735be05-5a96-4dd7-8412-46e5daf9dd3c",
+      "comment": "",
+      "command": "click",
+      "target": "id=:rr:",
+      "targets": [
+        ["id=:rr:", "id"],
+        ["name=lName", "name"],
+        ["css=#\\3Arr\\3A", "css:finder"],
+        ["xpath=//input[@id=':rr:']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[3]/main/div/div/div/div/form/div/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "60cf1904-13bd-4ea8-ab90-794a37099910",
+      "comment": "",
+      "command": "type",
+      "target": "id=:rr:",
+      "targets": [
+        ["id=:rr:", "id"],
+        ["name=lName", "name"],
+        ["css=#\\3Arr\\3A", "css:finder"],
+        ["xpath=//input[@id=':rr:']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[3]/main/div/div/div/div/form/div/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "user"
+    }, {
+      "id": "fe500999-c4b7-4e08-8001-d14c8ca3d3c8",
+      "comment": "",
+      "command": "click",
+      "target": "id=:rt:",
+      "targets": [
+        ["id=:rt:", "id"],
+        ["name=email", "name"],
+        ["css=#\\3Art\\3A", "css:finder"],
+        ["xpath=//input[@id=':rt:']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[3]/main/div/div/div/div/form/div/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5299fe3c-5a02-4bc6-b918-30b5029f2607",
+      "comment": "",
+      "command": "click",
+      "target": "id=:rt:",
+      "targets": [
+        ["id=:rt:", "id"],
+        ["name=email", "name"],
+        ["css=#\\3Art\\3A", "css:finder"],
+        ["xpath=//input[@id=':rt:']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[3]/main/div/div/div/div/form/div/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "18aba1cd-5d4c-4495-a8c3-08fa9ae17381",
+      "comment": "",
+      "command": "click",
+      "target": "id=:rt:",
+      "targets": [
+        ["id=:rt:", "id"],
+        ["name=email", "name"],
+        ["css=#\\3Art\\3A", "css:finder"],
+        ["xpath=//input[@id=':rt:']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[3]/main/div/div/div/div/form/div/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1bcdc701-46b2-4bfc-8de6-f869670feba5",
+      "comment": "",
+      "command": "click",
+      "target": "id=:rt:",
+      "targets": [
+        ["id=:rt:", "id"],
+        ["name=email", "name"],
+        ["css=#\\3Art\\3A", "css:finder"],
+        ["xpath=//input[@id=':rt:']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[3]/main/div/div/div/div/form/div/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "30c920c6-f2e4-44ab-b504-bf4780cc92ae",
+      "comment": "",
+      "command": "type",
+      "target": "id=:rt:",
+      "targets": [
+        ["id=:rt:", "id"],
+        ["name=email", "name"],
+        ["css=#\\3Art\\3A", "css:finder"],
+        ["xpath=//input[@id=':rt:']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[3]/main/div/div/div/div/form/div/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": "updated@example.com"
+    }, {
+      "id": "24e18b7f-73c5-4108-92bd-23a2d924ef66",
+      "comment": "",
+      "command": "click",
+      "target": "id=:rv:",
+      "targets": [
+        ["id=:rv:", "id"],
+        ["css=#\\3Arv\\3A", "css:finder"],
+        ["xpath=//button[@id=':rv:']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[3]/main/div/div/div/div/form/div/button", "xpath:idRelative"],
+        ["xpath=//form/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a915ad9b-5233-41c8-8ad8-85d4a4bf96a2",
+      "comment": "",
+      "command": "waitForText",
+      "target": "css=.MuiAlert-message",
+      "targets": [],
+      "value": "User information updated successfully"
+    }]
+  }, {
+    "id": "3.2-profile-update-with-invalid-email",
+    "name": "3.2 Profile Update with Invalid Email",
+    "commands": [{
+      "id": "navigate-to-edit-profile",
+      "comment": "Assuming we're already logged in",
+      "command": "open",
+      "target": "/profile/edit",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e6b10931-2d3f-460d-b1b7-abfe890e312b",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "id=:rt:",
+      "targets": [
+        ["id=:rt:", "id"],
+        ["name=email", "name"],
+        ["css=#\\3Art\\3A", "css:finder"],
+        ["xpath=//input[@id=':rt:']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[3]/main/div/div/div/div/form/div/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": "0.5,11.015625"
+    }, {
+      "id": "06305c5c-853d-4cb2-85e2-fe7950300256",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "id=:rt:",
+      "targets": [
+        ["id=:rt:", "id"],
+        ["name=email", "name"],
+        ["css=#\\3Art\\3A", "css:finder"],
+        ["xpath=//input[@id=':rt:']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[3]/main/div/div/div/div/form/div/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": "0.5,11.015625"
+    }, {
+      "id": "f89bdc97-b986-43e7-a0c5-76e893cd4bb9",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "id=:rt:",
+      "targets": [
+        ["id=:rt:", "id"],
+        ["name=email", "name"],
+        ["css=#\\3Art\\3A", "css:finder"],
+        ["xpath=//input[@id=':rt:']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[3]/main/div/div/div/div/form/div/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": "0.5,11.015625"
+    }, {
+      "id": "27b056e1-d373-4d7f-90c2-a60f24f53405",
+      "comment": "",
+      "command": "click",
+      "target": "id=:rt:",
+      "targets": [
+        ["id=:rt:", "id"],
+        ["name=email", "name"],
+        ["css=#\\3Art\\3A", "css:finder"],
+        ["xpath=//input[@id=':rt:']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[3]/main/div/div/div/div/form/div/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4a77e96b-9a49-4894-872a-435ad915ed0d",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "id=:rv:",
+      "targets": [
+        ["id=:rv:", "id"],
+        ["css=#\\3Arv\\3A", "css:finder"],
+        ["xpath=//button[@id=':rv:']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[3]/main/div/div/div/div/form/div/button", "xpath:idRelative"],
+        ["xpath=//form/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ad8ab448-c571-49d8-bdff-86457f2c943d",
+      "comment": "",
+      "command": "type",
+      "target": "id=:rt:",
+      "targets": [
+        ["id=:rt:", "id"],
+        ["name=email", "name"],
+        ["css=#\\3Art\\3A", "css:finder"],
+        ["xpath=//input[@id=':rt:']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[3]/main/div/div/div/div/form/div/div[4]/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": "invalid-email"
+    }, {
+      "id": "ddcab012-ce3b-420b-a0d6-751f89c61901",
+      "comment": "",
+      "command": "click",
+      "target": "id=:rv:",
+      "targets": [
+        ["id=:rv:", "id"],
+        ["css=#\\3Arv\\3A", "css:finder"],
+        ["xpath=//button[@id=':rv:']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div[3]/main/div/div/div/div/form/div/button", "xpath:idRelative"],
+        ["xpath=//form/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "wait-for-profile-page",
+      "comment": "Wait for Edit Profile page to load",
+      "command": "waitForElementPresent",
+      "target": "css=.MuiTypography-h4",
+      "targets": [],
+      "value": "Edit Profile"
+    }]
+  }, {
+    "id": "3.3-profile-update-with-empty-fields",
+    "name": "3.3 Profile Update with Empty Fields",
+    "commands": [{
+      "id": "navigate-to-edit-profile",
+      "comment": "Assuming we're already logged in",
+      "command": "open",
+      "target": "/profile/edit",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "wait-for-profile-page",
+      "comment": "Wait for Edit Profile page to load",
+      "command": "waitForElementPresent",
+      "target": "css=.MuiTypography-h4",
+      "targets": [],
+      "value": "Edit Profile"
+    }, {
+      "id": "clear-first-name",
+      "comment": "Clear First Name field",
+      "command": "type",
+      "target": "name=fName",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "click-update",
+      "comment": "Click Update Profile button",
+      "command": "click",
+      "target": "css=.MuiButton-contained",
+      "targets": [],
+      "value": "UPDATE PROFILE"
+    }, {
+      "id": "verify-still-on-profile-edit",
+      "comment": "Verify success message not exist",
+      "command": "verifyElementNotPresent",
+      "target": "css=.MuiAlert-message",
+      "targets": [],
+      "value": "User information updated successfully"
+    }]
+  }, {
+    "id": "3.5-profile-update-cancellation",
+    "name": "3.5 Profile Update Cancellation",
+    "commands": [{
+      "id": "navigate-to-edit-profile",
+      "comment": "Assuming we're already logged in",
+      "command": "open",
+      "target": "/profile/edit",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "wait-for-profile-page",
+      "comment": "Wait for Edit Profile page to load",
+      "command": "waitForElementPresent",
+      "target": "css=.MuiTypography-h4",
+      "targets": [],
+      "value": "Edit Profile"
+    }, {
+      "id": "make-change",
+      "comment": "Make a change to a field",
+      "command": "type",
+      "target": "name=fName",
+      "targets": [],
+      "value": "Temporary"
+    }, {
+      "id": "click-cancel",
+      "comment": "Click Cancel button",
+      "command": "click",
+      "target": "css=.MuiButton-outlined",
+      "targets": [],
+      "value": "CANCEL"
+    }, {
+      "id": "verify-redirect-to-map",
+      "comment": "Verify redirected to Map page",
+      "command": "waitForElementPresent",
+      "target": "css=.MuiTypography-h4",
+      "targets": [],
+      "value": "PROFESSIONAL SUMMARY"
+    }]
+  }, {
+    "id": "4.3-logout-functionality",
+    "name": "4.3 Logout Functionality",
+    "commands": [{
+      "id": "verify-logged-in",
+      "comment": "First ensure we're logged in",
+      "command": "open",
+      "target": "/map",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "wait-for-map-page",
+      "comment": "Wait for Map page to load",
+      "command": "waitForElementPresent",
+      "target": "css=.MuiListItemText-root",
+      "targets": [],
+      "value": "Logout"
+    }, {
+      "id": "click-logout",
+      "comment": "Click Logout button",
+      "command": "click",
+      "target": "linkText=Logout",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "verify-redirected-to-login",
+      "comment": "Verify redirected to Login page",
+      "command": "waitForElementPresent",
+      "target": "css=.MuiTypography-h4",
+      "targets": [],
+      "value": "Welcome Back!"
+    }, {
+      "id": "attempt-access-protected-route",
+      "comment": "Attempt to access a protected route",
+      "command": "open",
+      "target": "/map",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "verify-still-at-login",
+      "comment": "Verify still at Login page",
+      "command": "assertElementPresent",
+      "target": "css=.MuiTypography-h4",
+      "targets": [],
+      "value": "Welcome Back!"
+    }]
+  }],
+  "suites": [{
+    "id": "login-suite",
+    "name": "Login Tests",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["1.1-successful-login", "1.2-invalid-username", "1.3-invalid-password", "1.4-empty-fields-validation", "1.5-login-with-enter-key"]
+  }, {
+    "id": "registration-suite",
+    "name": "Registration Tests",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["2.1-successful-registration", "2.2-registration-with-existing-username", "2.4-registration-with-invalid-email", "2.5-registration-with-short-password"]
+  }, {
+    "id": "profile-suite",
+    "name": "Profile Management Tests",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["3.1-successful-profile-update", "3.2-profile-update-with-invalid-email", "3.3-profile-update-with-empty-fields", "3.5-profile-update-cancellation"]
+  }, {
+    "id": "access-suite",
+    "name": "Access Control Tests",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["4.3-logout-functionality"]
+  }],
+  "urls": ["http://localhost:5173/"],
+  "plugins": []
+}
