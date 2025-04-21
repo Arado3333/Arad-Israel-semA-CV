@@ -7,7 +7,7 @@ import {
     Navigate,
 } from "react-router-dom";
 import DashboardLayoutBranding from "./components/DashboardSidebarAccountFooter.jsx";
-import Map from "./pages/map";
+import Map from "./pages/MyCV.jsx";
 import Chat from "./pages/chat";
 import EditProfile from "./pages/EditProfile";
 import Logout from "./pages/Logout"; // Import the Logout component

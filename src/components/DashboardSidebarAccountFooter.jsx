@@ -1,14 +1,7 @@
 import PropTypes from "prop-types";
-import { Routes, Route } from "react-router-dom";
 import { createTheme } from "@mui/material/styles";
 import { AppProvider } from "@toolpad/core/AppProvider";
 import { DashboardLayout } from "@toolpad/core/DashboardLayout";
-import { useContext } from "react";  
-
-import HomePage from "../pages/Home";
-import MapPage from "../pages/map";
-import ChatPage from "../pages/chat";
-import Login from "../pages/Login";
 
 const demoTheme = createTheme({
     cssVariables: {
@@ -44,15 +37,15 @@ const NAVIGATION = [
         title: "Edit Profile",
     },
     {
-        segment: "logout", // Change this from "login" to "logout"
+        segment: "logout",
         title: "Logout",
-    }
+    },
 ];
 
 function DashboardLayoutBranding(props) {
     const { window, children } = props;
     const demoWindow = window !== undefined ? window() : undefined;
-    
+
     return (
         <AppProvider
             navigation={NAVIGATION}
@@ -64,16 +57,14 @@ function DashboardLayoutBranding(props) {
             theme={demoTheme}
             window={demoWindow}
         >
-            <DashboardLayout>
-                {children}
-            </DashboardLayout>
+            <DashboardLayout>{children}</DashboardLayout>
         </AppProvider>
     );
 }
 
 DashboardLayoutBranding.propTypes = {
     window: PropTypes.func,
-    children: PropTypes.node
+    children: PropTypes.node,
 };
 
 export default DashboardLayoutBranding;
