@@ -50,7 +50,7 @@ describe('Homepage (MyCV) After Login', () => {
     cy.contains('WORK HISTORY').should('be.visible');
     cy.contains('Test work history').should('be.visible');
     cy.contains('EDUCATION').should('be.visible');
-    cy.contains('SKILLS').should('be.visible');
+    cy.get('[data-cy="skills-heading"]').should('be.visible');
     cy.contains('JavaScript').should('be.visible');
     cy.contains('Delete CV', { timeout: 5000 }).should('exist');
     // Using exist instead of visible due to potential overflow clipping issues

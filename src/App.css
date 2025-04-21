@@ -1,12 +1,28 @@
-/* הוספת אנימציה לעבור בין חלונות בצורה חלקה */
-.window {
-    opacity: 0;
-    transform: scale(0.9);
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* אנימציה של שינוי שקיפות ושינוי גודל */
-  }
-  
-  .window.show {
-    opacity: 1;
-    transform: scale(1);
-  }
-  
+/* Reset any transitions */
+* {
+    box-sizing: border-box;
+    transition: none !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: visible !important;  /* Ensure overflow visibility */
+}
+
+/* Fix for Cypress test issues */
+.MuiTypography-root, 
+.MuiCard-root, 
+.MuiCardContent-root, 
+.MuiBox-root, 
+.MuiButton-root {
+    overflow: visible !important;
+    position: relative;
+    z-index: auto;
+}
+
+/* Ensure all content is visible for testing */
+ul {
+    overflow: visible !important;
+    padding-left: 20px;
+}

@@ -72,7 +72,7 @@ function MapPage() {
     }
 
     return (
-        <Box sx={{ maxWidth: 1200, margin: "auto", padding: 4 }}>
+        <Box sx={{ maxWidth: 1200, margin: "auto", padding: 4, overflow: "visible" }}>
             {cvData.map((resumeData, index) => (
                 <Card
                     key={index}
@@ -82,9 +82,10 @@ function MapPage() {
                         borderRadius: 2,
                         boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.1)",
                         position: "relative",
+                        overflow: "visible"
                     }}
                 >
-                    <CardContent>
+                    <CardContent sx={{ overflow: "visible" }}>
                         {/* Header Section */}
                         <Box sx={{ textAlign: "left", marginBottom: 4 }}>
                             <Typography
@@ -158,23 +159,25 @@ function MapPage() {
                         <Divider sx={{ my: 3 }} />
 
                         {/* Skills Section */}
-                        <Box sx={{ marginBottom: 4 }}>
+                        <Box sx={{ marginBottom: 4, overflow: "visible" }}>
                             <Typography
                                 variant="h5"
                                 gutterBottom
-                                sx={{ fontWeight: "bold" }}
+                                sx={{ fontWeight: "bold", overflow: "visible" }}
+                                data-cy="skills-heading"
                             >
                                 SKILLS
                             </Typography>
-                            <ul>
+                            <ul style={{ overflow: "visible" }}>
                                 {resumeData.skills
                                     ? resumeData.skills
                                           .split(",")
                                           .map((skill, index) => (
-                                              <li key={index}>
+                                              <li key={index} style={{ overflow: "visible" }}>
                                                   <Typography
                                                       variant="body1"
                                                       color="text.secondary"
+                                                      sx={{ overflow: "visible" }}
                                                   >
                                                       {skill.trim()}
                                                   </Typography>
