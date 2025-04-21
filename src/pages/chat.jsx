@@ -350,7 +350,15 @@ function ChatPage() {
     };
 
     return (
-        <Paper elevation={3} sx={{ padding: 3, margin: 3 }}>
+        <Paper elevation={3} sx={{ 
+            padding: 3, 
+            margin: 3,
+            // Only add z-index to buttons but don't change overflow behavior
+            "& .MuiButtonBase-root": {
+                position: "relative",
+                zIndex: 10
+            }
+        }}>
             <Typography variant="h4" align="center" gutterBottom>
                 Job Interview Chat
             </Typography>
@@ -368,10 +376,10 @@ function ChatPage() {
                                     sx={{
                                         backgroundColor: "gray",
                                         padding: 1,
-                                        borderRadius: 2,
+                                        borderRadius: 2
                                     }}
                                 >
-                                    <Typography>{message.content}</Typography>
+                                    <Typography data-cy="user-message">{message.content}</Typography>
                                 </Box>
                             </>
                         ) : message.role === "system" ? (
@@ -381,10 +389,10 @@ function ChatPage() {
                                         backgroundColor: "black",
                                         padding: 1,
                                         borderRadius: 2,
-                                        marginLeft: "auto",
+                                        marginLeft: "auto"
                                     }}
                                 >
-                                    <Typography>{message.content}</Typography>
+                                    <Typography data-cy="system-message">{message.content}</Typography>
                                 </Box>
                                 <Avatar
                                     sx={{ bgcolor: "grey.500", marginLeft: 1 }}
@@ -399,10 +407,10 @@ function ChatPage() {
                                         backgroundColor: "black",
                                         padding: 1,
                                         borderRadius: 2,
-                                        marginLeft: "auto",
+                                        marginLeft: "auto"
                                     }}
                                 >
-                                    <Typography>{message.content}</Typography>
+                                    <Typography data-cy="assistant-message">{message.content}</Typography>
                                 </Box>
                                 <Avatar
                                     sx={{ bgcolor: "grey.500", marginLeft: 1 }}
@@ -428,6 +436,8 @@ function ChatPage() {
                             }
                         }}
                         disabled={loading}
+                        data-cy="chat-input"
+                        inputProps={{ "data-cy": "chat-input-field" }}
                     />
                 </Grid>
                 <Grid item xs={2}>
@@ -438,12 +448,19 @@ function ChatPage() {
                         fullWidth
                         startIcon={<SendIcon />}
                         disabled={loading}
+                        data-cy="send-button"
                     >
                         {loading ? "Loading..." : "Send"}
                     </Button>
                 </Grid>
             </Grid>
-            <Grid container spacing={2} sx={{ marginTop: 2 }}>
+            <Grid container spacing={2} sx={{ 
+                marginTop: 2, 
+                position: "relative",
+                "& .MuiButton-root": {
+                    zIndex: 10
+                } 
+            }}>
                 <Grid item xs={12}>
                     <Button
                         variant="contained"
@@ -451,6 +468,11 @@ function ChatPage() {
                         onClick={endConversation}
                         fullWidth
                         disabled={currentQuestionIndex <= questions.length - 1}
+                        data-cy="end-conversation-button"
+                        sx={{ 
+                            position: "relative",
+                            zIndex: 20
+                        }}
                     >
                         End Conversation
                     </Button>

@@ -78,7 +78,7 @@ function App() {
                     <Route path="map" element={<Map />} />
                     <Route path="chat" element={<Chat />} />
                     <Route path="profile/edit" element={<EditProfile username={currentUser} />} />
-                    <Route path="logout" element={<Logout />} /> {/* Add the Logout route */}
+                    <Route path="logout" element={<Logout />} />
                 </Route>
             </Routes>
         </Router>

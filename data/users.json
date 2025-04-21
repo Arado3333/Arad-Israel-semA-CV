@@ -6,5 +6,13 @@
     "email": "bar@gmail.com",
     "username": "bar1234",
     "password": "12345678"
+  },
+  {
+    "id": 2,
+    "fName": "Test",
+    "lName": "User",
+    "email": "user_623@example.com",
+    "username": "user_623",
+    "password": "12345678"
   }
 ]

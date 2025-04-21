@@ -242,12 +242,19 @@ function MapPage() {
                             display: "flex",
                             justifyContent: "flex-end",
                             padding: 2,
+                            overflow: "visible", // Ensure overflow is visible for Cypress tests
+                            zIndex: 1, // Add z-index to ensure button appears above other elements
                         }}
                     >
                         <Button
                             variant="contained"
                             color="error"
                             onClick={() => deleteCv(index)}
+                            sx={{ 
+                                overflow: "visible", // Ensure button content is visible
+                                position: "relative" // Establish positioning context
+                            }}
+                            data-cy="delete-cv-button" // Add data attribute for easier testing
                         >
                             Delete CV
                         </Button>

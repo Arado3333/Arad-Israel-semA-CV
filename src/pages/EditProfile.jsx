@@ -21,6 +21,11 @@ function EditProfile({ username }) {
     });
     const [message, setMessage] = useState("");
     const [status, setStatus] = useState("idle"); // idle, loading, success, error
+    const [fieldErrors, setFieldErrors] = useState({
+        fName: false,
+        lName: false,
+        email: false
+    });
     const navigate = useNavigate();
 
     // Fetch user data on component mount
@@ -58,6 +63,10 @@ function EditProfile({ username }) {
     // Handle form submission to update user profile
     const handleSubmit = async (event) => {
         event.preventDefault();
+        
+        // Set focus on first input to activate HTML5 validation
+        document.querySelector('input[name="fName"]')?.focus();
+        document.querySelector('input[name="fName"]')?.blur();
         
         if (!validateForm()) {
             return;
@@ -101,20 +110,53 @@ function EditProfile({ username }) {
     
     // Validate form data
     const validateForm = () => {
+        // Reset field errors
+        const errors = {
+            fName: false,
+            lName: false,
+            email: false
+        };
+        let isValid = true;
+        
         // Check for empty fields
-        if (!formData.fName || !formData.lName || !formData.email) {
+        if (!formData.fName) {
+            errors.fName = true;
+            isValid = false;
+        }
+        
+        if (!formData.lName) {
+            errors.lName = true;
+            isValid = false;
+        }
+        
+        if (!formData.email) {
+            errors.email = true;
+            isValid = false;
+        }
+        
+        if (!isValid) {
             setMessage("All fields are required");
             setStatus("error");
+            setFieldErrors(errors);
             return false;
         }
         
         // Validate email format
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(formData.email)) {
+            errors.email = true;
             setMessage("Please enter a valid email address");
             setStatus("error");
+            setFieldErrors(errors);
             return false;
         }
+        
+        // Clear all field errors if form is valid
+        setFieldErrors({
+            fName: false,
+            lName: false,
+            email: false
+        });
         
         return true;
     };
@@ -155,6 +197,7 @@ function EditProfile({ username }) {
                             textAlign="center"
                             mb={4}
                             sx={{ color: "#fff" }}
+                            data-cy="edit-profile-title"
                         >
                             Edit Profile
                         </Typography>
@@ -163,6 +206,7 @@ function EditProfile({ username }) {
                             <Alert 
                                 severity={status === "success" ? "success" : "error"}
                                 sx={{ mb: 3 }}
+                                data-cy="form-alert"
                             >
                                 {message}
                             </Alert>
@@ -177,6 +221,7 @@ function EditProfile({ username }) {
                                     name="username"
                                     value={formData.username}
                                     disabled
+                                    data-cy="username-field"
                                     InputLabelProps={{ style: { color: "#aaa" } }}
                                     InputProps={{
                                         style: {
@@ -196,13 +241,27 @@ function EditProfile({ username }) {
                                     name="fName"
                                     value={formData.fName}
                                     onChange={handleInputChange}
-                                    InputLabelProps={{ style: { color: "#aaa" } }}
+                                    error={fieldErrors.fName}
+                                    helperText={fieldErrors.fName ? "First name is required" : ""}
+                                    data-cy="fname-field"
+                                    inputProps={{
+                                        // Native HTML validation attributes
+                                        required: true,
+                                        "data-cy": "fname-input"
+                                    }}
+                                    InputLabelProps={{ 
+                                        style: { color: fieldErrors.fName ? "#f44336" : "#aaa" } 
+                                    }}
                                     InputProps={{
                                         style: {
                                             color: "white",
                                             background: "#333",
                                             borderRadius: "8px",
                                         },
+                                    }}
+                                    FormHelperTextProps={{
+                                        style: { color: "#f44336" },
+                                        "data-cy": "fname-error"
                                     }}
                                 />
                                 
@@ -214,13 +273,27 @@ function EditProfile({ username }) {
                                     name="lName"
                                     value={formData.lName}
                                     onChange={handleInputChange}
-                                    InputLabelProps={{ style: { color: "#aaa" } }}
+                                    error={fieldErrors.lName}
+                                    helperText={fieldErrors.lName ? "Last name is required" : ""}
+                                    data-cy="lname-field"
+                                    inputProps={{
+                                        // Native HTML validation attributes
+                                        required: true,
+                                        "data-cy": "lname-input"
+                                    }}
+                                    InputLabelProps={{ 
+                                        style: { color: fieldErrors.lName ? "#f44336" : "#aaa" } 
+                                    }}
                                     InputProps={{
                                         style: {
                                             color: "white",
                                             background: "#333",
                                             borderRadius: "8px",
                                         },
+                                    }}
+                                    FormHelperTextProps={{
+                                        style: { color: "#f44336" },
+                                        "data-cy": "lname-error"
                                     }}
                                 />
                                 
@@ -233,13 +306,29 @@ function EditProfile({ username }) {
                                     name="email"
                                     value={formData.email}
                                     onChange={handleInputChange}
-                                    InputLabelProps={{ style: { color: "#aaa" } }}
+                                    error={fieldErrors.email}
+                                    helperText={fieldErrors.email ? 
+                                        (formData.email ? "Please enter a valid email address" : "Email is required") : ""}
+                                    data-cy="email-field"
+                                    inputProps={{
+                                        // Native HTML validation attributes
+                                        required: true,
+                                        pattern: "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$",
+                                        "data-cy": "email-input"
+                                    }}
+                                    InputLabelProps={{ 
+                                        style: { color: fieldErrors.email ? "#f44336" : "#aaa" } 
+                                    }}
                                     InputProps={{
                                         style: {
                                             color: "white",
                                             background: "#333",
                                             borderRadius: "8px",
                                         },
+                                    }}
+                                    FormHelperTextProps={{
+                                        style: { color: "#f44336" },
+                                        "data-cy": "email-error"
                                     }}
                                 />
                                 
@@ -248,12 +337,15 @@ function EditProfile({ username }) {
                                     variant="contained"
                                     color="primary"
                                     disabled={status === "loading"}
+                                    data-cy="update-profile-button"
                                     sx={{
                                         borderRadius: "20px",
                                         padding: "10px",
                                         fontSize: "16px",
                                         background: "#1976d2",
                                         "&:hover": { background: "#125ea8" },
+                                        position: "relative", // Ensure visibility
+                                        zIndex: 2
                                     }}
                                 >
                                     {status === "loading" ? "Updating..." : "Update Profile"}
@@ -263,6 +355,7 @@ function EditProfile({ username }) {
                                     variant="outlined"
                                     color="secondary"
                                     onClick={() => navigate("/map")}
+                                    data-cy="cancel-button"
                                     sx={{
                                         borderRadius: "20px",
                                         padding: "10px",
@@ -273,6 +366,8 @@ function EditProfile({ username }) {
                                             background: "rgba(255,255,255,0.1)",
                                             borderColor: "#fff",
                                         },
+                                        position: "relative", // Ensure visibility
+                                        zIndex: 2
                                     }}
                                 >
                                     Cancel
