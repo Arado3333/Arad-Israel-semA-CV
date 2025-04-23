@@ -22,5 +22,13 @@
     "email": "user_4937@example.com",
     "username": "user_4937",
     "password": "12345678"
+  },
+  {
+    "id": 4,
+    "fName": "Daniel",
+    "lName": "Knafel",
+    "email": "daniel@gmail.com",
+    "username": "dknafel123",
+    "password": "12345678"
   }
 ]

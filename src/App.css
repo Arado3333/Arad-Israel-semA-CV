@@ -7,16 +7,17 @@
 body {
     margin: 0;
     padding: 0;
-    overflow-x: visible !important;  /* Ensure overflow visibility */
+    overflow-x: visible !important;
+    /* Ensure overflow visibility */
 }
 
 /* Fix for Cypress test issues */
-.MuiTypography-root, 
-.MuiCard-root, 
-.MuiCardContent-root, 
-.MuiBox-root, 
+.MuiTypography-root,
+.MuiCard-root,
+.MuiCardContent-root,
+.MuiBox-root,
 .MuiButton-root {
-    overflow: visible !important;
+    overflow: auto;
     position: relative;
     z-index: auto;
 }

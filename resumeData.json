@@ -1,13 +1,16 @@
 [
   {
-    "fullName": "Israel Anti",
-    "currentRole": "CEO of Tech Innovations Inc.",
-    "skills": "Leadership, Strategic Planning, Software Development, AI, Machine Learning, Business Development, Risk Management, Public Speaking",
-    "education": "M.Sc. in Computer Science from Tel Aviv University, MBA from Stanford University",
-    "teamExperience": "Led a team of over 500 engineers across multiple continents. Successfully scaled operations and expanded to 10 countries.",
-    "achievements": "Built and sold a tech startup for $500M. Developed cutting-edge AI solutions for Fortune 500 companies. Speaker at global tech conferences.",
-    "careerGoals": "To continue leading innovation in the tech industry, focusing on AI and sustainable tech solutions. Aspires to create the next unicorn in the tech sector.",
-    "hobbies": "Investing in startups, traveling the world, playing chess, and mentoring young entrepreneurs.",
-    "location": "Silicon Valley, USA"
+    "fullName": "Arad David",
+    "currentRole": "Software Engineer",
+    "skills": "Team work, javascript",
+    "education": "Practical software engineer",
+    "teamExperience": "Class projects",
+    "achievements": "Dean best student",
+    "careerGoals": "Team management",
+    "hobbies": "Playing the piano",
+    "location": "Israel",
+    "summary": "**\nhighly motivated and detail-oriented software engineer with a strong background in team work and practical software engineering skills. Proficient in javascript and possessing excellent problem-solving skills. Seeking a challenging role that allows me to utilize my skills and experience to drive team success.\n\n**.",
+    "jobHistory": "",
+    "keyQualifications": ""
   }
 ]
